@@ -1,0 +1,52 @@
+.btn {
+    display: block;
+    width: 260px;
+    height: 54px;
+    border: 2px solid ;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    cursor: pointer;
+    transition: all .7s;
+    &_green {
+        background: transparent;
+        border-color: var(--green);
+        color: var(--green);
+        &:hover {
+            background: var(--green);
+            color: var(--white);
+        }
+    }
+    &_black {
+        background: var(--main);
+        border-color: var(--main);
+        color: var(--white);
+        &:hover {
+            background: var(--red);
+        }
+    }
+    &_red {
+        background: var(--red);
+        border-color: var(--red);
+        color: var(--white);
+        &:hover {
+            background: var(--main);
+        }
+    }
+    &_white {
+        background: transparent;
+        border-color: var(--white);
+        color: var(--white);
+        &:hover {
+            background: var(--green);
+            color: var(--white);
+        }
+    }
+    &_white, &_black, &_red {
+        &:active {
+            background: var(--black);
+            color: var(--white);
+            border-color: var(--black);
+        }
+    }
+}

@@ -2,18 +2,28 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Monotype Corsiva", "SovMod", "Montserrat",  sans-serif;
+    // font-family: "Monotype Corsiva", "SovMod", "Montserrat",  sans-serif;
     color: #2d2d2d;
 }
 body {
     font-family: "Montserrat", sans-serif;
-
+    position: relative;
+    // background: var(--main);
 }
+
 :root {
+    --main: #2d2d2d;
     --black: #000000;
     --white: #FFFFFF;
+    --green: #102f28;
+    --red: #c73d42;
+}
+.black {
+    display: none;
+    // display: '';
+    
 }
 
-
+@import 'base/mixins';
 @import 'base/*.scss';
 @import 'blocks/*.scss';

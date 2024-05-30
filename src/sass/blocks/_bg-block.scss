@@ -1,0 +1,36 @@
+.bg-blok_top {
+    display: grid;
+    grid-template: 56px repeat(3, max-content) / 3fr 2fr 3fr 2fr;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+}
+
+.bg-block_bottom {
+    display: none;
+    grid-template: max-content 94px max-content 304px max-content max-content / 3fr 8fr 4fr;
+    column-gap: 16px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.marble {
+    width: 100%;
+    img {
+        @include img-contain;
+    }
+    &_1 {
+        grid-area: 2 / 3 / 3 / 4;
+        width: 90%;
+        justify-self: center;
+    }
+    &_2 {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+    &_3 {
+        grid-area: 4 / 4 / 5 / 5;
+        transform: translateY(-28px);
+    }
+}

@@ -1,0 +1,92 @@
+.header {
+    position: relative;
+    display: grid;
+    grid-template-columns: 8fr 5fr;
+    column-gap: 32px;
+    z-index: 10;
+    &__left-block {
+        width: 100%;
+        img {
+            @include img-cover;
+        }
+    }
+    &__descr {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        gap: 10px;
+        align-items: center;
+    }
+    &__foto {
+        width: 100%;
+        img {
+            @include img-cover;
+        }
+    }
+    &__title {
+        text-align: center;
+        font-family: 'SovMod';
+        font-size: 60px;
+        line-height: 115%;
+        margin-bottom: 26px;
+        span {
+            display: block;
+            &:first-child {
+                box-sizing: content-box;
+                font-size: 70px;
+                color: var(--white);
+                -webkit-text-stroke: 1.7px var(--main);
+                margin-bottom: 16px;
+            }
+            &:last-child {
+                margin-left: -27%;
+            }
+        }
+    }
+    &__links {
+        grid-column: 1 / 3;
+        padding: 66px 0 51px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__catalog {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 105%;
+        text-decoration: none;
+        
+        &::after {
+            content: '';
+            display: inline-block;
+            width: 45px;
+            height: 2px;
+            background: var(--main);
+            margin-left: 12px;
+            transform: translateY(-4px);
+        }
+    }
+    &__social {
+        display: flex;
+        a {
+            position: relative;
+            width: 25px;
+            height: 25px;
+            display: block;
+            margin-left: 20px;
+            svg {
+                position: absolute;
+                @include img-cover;
+                fill: var(--green);
+                &:hover {
+                    fill: var(--black); 
+                }
+            }
+            svg + .black {
+                &:hover {
+                    filter: invert(1);
+                }
+
+            }
+        }
+    }
+}
