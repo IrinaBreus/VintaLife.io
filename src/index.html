@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-
     <div class="bg-blok_top">
         <div class="marble marble_1 white">
             <img src="img/bg/marble_white1.png" alt="bg">
@@ -23,6 +22,9 @@
         </div>
         <div class="marble marble_3 white">
             <img src="img/bg/marble_white3.png" alt="bg">
+        </div>
+        <div class="marble marble_mob white">
+            <img src="img/bg/marble-w-mob1.png" alt="bg">
         </div>
 
         <div class="marble marble_1 black">
@@ -34,13 +36,16 @@
         <div class="marble marble_3 black">
             <img src="img/bg/marble-black3.png" alt="bg">
         </div>
+        <div class="marble marble_mob black">
+            <img src="img/bg/marble-b-mob1.png" alt="bg">
+        </div>
         
     </div>
-
+    
     <header class="header">
         <div class="header__main-block">
-            <nav class="nav-panel">
-                <div class="nav-panel__logo ml-head">
+            <nav class="nav-panel ml-head">
+                <div class="nav-panel__logo ">
                     <a href="#">
                         <img src="icons/logo.svg" alt="logo">
                     </a>
@@ -58,8 +63,13 @@
                             <use xlink:href="icons/symbol-defs.svg#icon-toggle-white "></use>
                         </svg>
                     </button>
-                    <button class="nav-panel__menu-btn">
-                        <span>1</span><span>2</span><span>3</span><span>4</span>
+                    <button class="nav-panel__menu-btns">
+                        <div class="nav-panel__menu-btn nav-panel__menu-btn_dark ">
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="nav-panel__menu-btn nav-panel__menu-btn_light black">
+                            <span></span><span></span><span></span><span></span>
+                        </div>
                     </button>
                 </div>
             </nav>
@@ -77,7 +87,8 @@
                     <button class="btn btn_red ml130">Расчет стоимости кухни</button>
                 </div>
                 <div class="header__links ml-head">
-                    <a href="#" class="header__catalog">Более 1000 фото в каталоге</a>
+                    <a href="#" class="header__catalog header__catalog_disp">Более 1000 фото в каталоге</a>
+                    <a href="#" class="header__catalog header__catalog_mob">Каталог</a>
                     <div class="header__social">
                         <a href="#">
                             <svg>
@@ -106,11 +117,38 @@
                     </div>
                 </div>
             </div>
+            <div class="header__feedback">
+                <button class="btn btn_green">Заказать обратный звонок</button>
+                <a href="tel:+7-962-88-777-51">+7 (962) 88-777-51</a>
+            </div>
         </div>
         <div class="header__left-block">
             <img src="img/header/img-left.jpg" alt="кухня">
         </div>
     </header>
+    
+    <div class="burger">
+        <div class="burger__wrapper">
+            <ul class="burger__menu">
+                <li>
+                    <a href="#">Преимущества</a>
+                </li>
+                <li>
+                    <a href="#">Каталог</a>
+                </li>
+                <li>
+                    <a href="#">Партнеры</a>
+                </li>
+                <li>
+                    <a href="#">Рассрочка</a>
+                </li>
+                <li>
+                    <a href="#">Контакты</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
     <div class="advantages"></div>
     <section class="catalog"></section>
     <section class="feedback"></section>
@@ -141,6 +179,7 @@
         </div>
         <footer class="footer"></footer>
     </div>
+
     <!-- <svg>
         <use xlink:href="icons/symbol-defs.svg#icon-Brush"></use>
     </svg> -->

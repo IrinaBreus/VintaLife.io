@@ -16,27 +16,17 @@
   \************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_calcScroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/calcScroll */ \"./src/js/modules/calcScroll.js\");\n/* harmony import */ var _modules_scrollUp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/scrollUp */ \"./src/js/modules/scrollUp.js\");\n\r\n\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n'use stricti';\r\n\r\n(0,_modules_scrollUp__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n(0,_modules_calcScroll__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n});\n\n//# sourceURL=webpack://gulp-start/./src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/burger */ \"./src/js/modules/burger.js\");\n\r\n// import calcScroll from './modules/calcScroll';\r\n// import scrollUp from './modules/scrollUp';\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n'use stricti';\r\n\r\n(0,_modules_burger__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n// scrollUp();\r\n// calcScroll();\r\n});\n\n//# sourceURL=webpack://gulp-start/./src/js/main.js?");
 
 /***/ }),
 
-/***/ "./src/js/modules/calcScroll.js":
-/*!**************************************!*\
-  !*** ./src/js/modules/calcScroll.js ***!
-  \**************************************/
+/***/ "./src/js/modules/burger.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/burger.js ***!
+  \**********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\nconst calcScroll = () => {\r\n    let div = document.createElement('div');\r\n    div.style.width = '50px';\r\n    div.style.height = '50px';\r\n    div.style.overflowY = 'scroll';\r\n    div.style.visibility = 'hidden';\r\n    document.body.append(div);\r\n\r\n    let scrollWidth = div.offsetWidth - div.clientWidth;\r\n    div.remove();\r\n    return scrollWidth;\r\n};\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (calcScroll);\n\n//# sourceURL=webpack://gulp-start/./src/js/modules/calcScroll.js?");
-
-/***/ }),
-
-/***/ "./src/js/modules/scrollUp.js":
-/*!************************************!*\
-  !*** ./src/js/modules/scrollUp.js ***!
-  \************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-eval("__webpack_require__.r(__webpack_exports__);\nconst scrollUp = () => {\r\n    const up = document.querySelector('.up');\r\n\r\n    up.addEventListener('click', function(e) {\r\n        e.preventDefault();\r\n        \r\n        window.scrollTo({\r\n            left: 0,\r\n            top: 0,\r\n            behavior: \"smooth\"\r\n        });\r\n    })\r\n\r\n    window.addEventListener('scroll', () => {\r\n        if (document.documentElement.scrollTop > 1000) {\r\n            up.style.cssText = `opacity: 1;\r\n                                cursor: pointer;`\r\n        } else {\r\n            up.style.cssText = `opacity: 0;\r\n                                cursor: none;`\r\n        }\r\n    })\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (scrollUp);\n\n//# sourceURL=webpack://gulp-start/./src/js/modules/scrollUp.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nconst burger = () => {\r\n    const trigger = document.querySelector('.nav-panel__menu-btns'),\r\n          burger = document.querySelector('.burger'),\r\n          lists = burger.querySelectorAll('.burger__menu li');\r\n\r\n          console.log('111');\r\n    trigger.addEventListener('click', () => {\r\n        burger.classList.add('burger-active');\r\n    });\r\n\r\n    lists.forEach(list => {\r\n        list.addEventListener('click', () => {\r\n            burger.classList.remove('burger-active');\r\n        })\r\n    })\r\n\r\n    burger.addEventListener('click', (e) => {\r\n        if (e.target === burger && e.target !== document.querySelector('.burger__wrapper')) {\r\n            burger.classList.remove('burger-active');\r\n        }\r\n    })\r\n    document.addEventListener('keydown', (e) => {\r\n        if (e.code === 'Escape' && burger.classList.contains('burger-active')) {\r\n            burger.classList.remove('burger-active');\r\n        }\r\n    })\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (burger);\n\n//# sourceURL=webpack://gulp-start/./src/js/modules/burger.js?");
 
 /***/ })
 
