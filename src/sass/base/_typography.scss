@@ -1,3 +1,46 @@
+.txt-main {
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 105%;
+    &_dark {
+        color: var(--main);
+    }
+    &_light {
+        color: var(--white);
+    }
+    &_16 {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 115%;
+    }
+    &_14 {
+        font-weight: 400;
+        font-size: 14px;
+    }
+}
+.title {
+    font-family: "SovMod";
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 105%;
+    text-transform: uppercase;
+    &_dark {
+        color: var(--main);
+    }
+    &_light {
+        color: var(--white);
+    }
+}
+.subtitle {
+    font-family: "Monotype Corsiva";
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 105%;
+    letter-spacing: 0.11em;
+    color: var(--main);
+}
+
 .mb10 {
     margin-bottom: 10px;
 }
@@ -20,7 +63,19 @@
 }
 
 @media (max-width: 992px) {
-    
+    .txt-main {
+        
+        font-size: 20px;
+        &_16 {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 115%;
+        }
+        &_14 {
+            font-weight: 400;
+            font-size: 12px;
+        }
+    }
 }
 
 @media (max-width: 768px) {
