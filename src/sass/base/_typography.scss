@@ -24,6 +24,7 @@
     font-weight: 400;
     font-size: 40px;
     line-height: 105%;
+    letter-spacing: .2rem;
     text-transform: uppercase;
     &_dark {
         color: var(--main);
@@ -53,6 +54,12 @@
     
 }
 
+@media (max-width: 1600px) {
+    .title {
+        font-size: 38px;
+    }
+}
+
 @media (max-width: 1200px) {
     .ml130 {
         margin-left: 15%;
@@ -64,7 +71,6 @@
 
 @media (max-width: 992px) {
     .txt-main {
-        
         font-size: 20px;
         &_16 {
             font-weight: 400;

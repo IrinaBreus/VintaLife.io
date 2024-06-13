@@ -1,0 +1,116 @@
+.feedback {
+    padding: 50px 0;
+    position: relative;
+    text-align: center;
+    background: url(../img/feedback_bg.jpg) center center / cover no-repeat;
+    &__title {
+        color: #fff;
+        margin-bottom: 10px;
+    }
+    &__subtitle {
+        color: #fff;
+        margin-bottom: 40px;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 105%;
+    }
+    &__form {
+        width: 100%;
+        display: grid;
+        grid-template: repeat(2, max-content) / repeat(3, 1fr);
+        gap: 6px 60px;
+        justify-content: flex-end;
+        input {
+            width: 100%;
+            padding: 22px 30px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 105%;
+            color: #000000;
+            placeholder {
+                color: #2d2d2d;
+            }
+        }
+        button {
+            width: 100%;
+            height: 100%;
+            background: #102f28;
+            color: #fff;
+            border: none;
+            padding: 22px 0;
+        }
+        p {
+            display: block;
+            grid-area: 2 / 1 / 3 / 4;
+            text-align: right;
+            font-weight: 400;
+            font-size: 14px;
+            color: #fff;
+        }
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .feedback {
+        &__title {
+            letter-spacing: .1rem;
+            font-size: 34px;
+        }
+        &__subtitle {
+            font-size: 20px;
+        }
+        &__form {
+            gap: 6px 40px;
+            input {
+                padding: 20px 30px;
+                font-size: 16px;
+                line-height: normal;
+            }
+            button {
+                padding: 20px 0;
+            }
+        }
+    }
+    
+}
+
+@media (max-width: 992px) {
+    .feedback {
+        &__form {
+            gap: 6px 20px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .feedback {
+        &__title {
+            letter-spacing: 2px;
+            text-align: left;
+        }
+        &__subtitle {
+            font-size: 18px;
+            text-align: left;
+        }
+        &__form {
+            grid-template: repeat(4, max-content) / 1fr;
+            gap: 10px;
+            justify-content: flex-end;
+            input:nth-child(2) {
+                margin-bottom: 20px;
+            }
+            button {
+                padding: 22px 0;
+            }
+            p {
+                grid-area: 4 / 1 / 5 / 2;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    
+}
