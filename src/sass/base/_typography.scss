@@ -55,6 +55,15 @@
 }
 
 @media (max-width: 1600px) {
+    .txt-main {
+        font-size: 22px;
+        &_16 {
+            font-size: 16px;
+        }
+        &_14 {
+            font-size: 14px;
+        }
+    }
     .title {
         font-size: 38px;
     }
@@ -94,20 +103,12 @@
     .ml130 {
         margin-left: 0;
     }
+    .subtitle {
+        font-size: 18px;
+    }
 }
 @media (max-width: 374px) {
     .title {
-        font-family: "SovMod";
-        font-weight: 400;
         font-size: 36px;
-        line-height: 105%;
-        letter-spacing: .2rem;
-        text-transform: uppercase;
-        &_dark {
-            color: var(--main);
-        }
-        &_light {
-            color: var(--white);
-        }
     }
 }

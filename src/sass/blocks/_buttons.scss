@@ -44,7 +44,16 @@
             color: var(--white);
         }
     }
-    &_white, &_black, &_red {
+    &_dark {
+        background: var(--green);
+        border-color: var(--green);
+        color: var(--white);
+        &:hover {
+            background: var(--main);
+            color: var(--white);
+        }
+    }
+    &_white, &_black, &_red, &_dark {
         &:active {
             background: var(--black);
             color: var(--white);

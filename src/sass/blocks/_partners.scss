@@ -24,6 +24,7 @@
         img {
             @include img-contain;
             filter: grayscale(1);
+            transition: filter .7s;
         }
         &:hover img {
             filter: grayscale(0);
