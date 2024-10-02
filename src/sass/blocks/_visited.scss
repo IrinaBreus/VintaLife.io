@@ -1,3 +1,151 @@
 .visited {
-   
+	padding: 50px 0 110px;
+	&__wrapper {
+		display: grid;
+		grid-template: repeat(2, max-content) / 6fr 1fr 6fr;
+	}
+	&__title {
+		grid-area: 1 / 1 / 2 / 2;
+		padding-top: 44px;
+		margin-bottom: 40px;
+	}
+	
+	&__map {
+		grid-area: 1 / 3 / 3 / 4;
+		width: 100%;
+		height: 100%;
+		iframe {
+			width: 100%;
+			height: 100%;
+			border: none;
+		}
+	}
+	&__contacts {
+		grid-area: 2 / 1 / 3 / 2;
+		li {
+			margin-bottom: 20px;
+			&:last-child {
+				margin-bottom: 40px;
+			}
+		}
+	}
+	&__address-descr {
+		display: block;
+		font-weight: 400;
+		font-size: 16px;
+		color: var(--black);
+		text-decoration: none;
+		margin-top: 9px;
+	}
+	&__btn {
+		margin-bottom: 12px;
+	}
+	&__txt {
+		margin-bottom: 66px;
+	}
+}
+
+@media (max-width: 1600px) {
+    .visited {
+		padding: 50px 0 110px;
+		&__title {
+			padding: 0;
+		}
+		&__wrapper {
+			display: grid;
+			grid-template: repeat(2, max-content) / 1fr 1fr;
+			column-gap: 40px;
+		}
+		&__map {
+			grid-area: 1 / 2 / 3 / 3;
+		}
+	}
+}
+
+@media (max-width: 992px) {
+    .visited {
+		&__wrapper {
+			column-gap: 10px;
+		}
+		&__title {
+			grid-area: 1 / 1 / 2 / 3;
+			div {
+				width: 80%;
+			}
+		}
+		&__map {
+			grid-area: 2 / 2 / 3 / 3;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+    .visited {
+		&__wrapper {
+			grid-template: repeat(3, max-content) / 1fr;
+			gap: 0;
+		}
+		&__title {
+			grid-area: 1 / 1 / 2 / 2;
+			margin-bottom: 20px;
+			div {
+				width: 100%;
+			}
+		}
+		&__map {
+			grid-area: 2 / 1 / 3 / 2;
+			height: 400px;
+			margin-bottom: 20px;
+		}
+		&__contacts {
+			grid-area: 3 / 1 / 4 / 2;
+			li {
+				&:last-child {
+					margin-bottom: 20px;
+				}
+			}
+		}
+		&__btn {
+			margin-bottom: 20px;
+		}
+		&__txt {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 576px) {
+    .visited {
+		&__wrapper {
+			grid-template: repeat(3, max-content) / 1fr;
+			gap: 0;
+		}
+		&__title {
+			grid-area: 1 / 1 / 2 / 2;
+			margin-bottom: 20px;
+			div {
+				width: 100%;
+			}
+		}
+		&__map {
+			grid-area: 2 / 1 / 3 / 2;
+			width: 100%;
+			height: 320px;
+			margin-bottom: 20px;
+		}
+		&__contacts {
+			grid-area: 3 / 1 / 4 / 2;
+			li {
+				&:last-child {
+					margin-bottom: 20px;
+				}
+			}
+		}
+		&__btn {
+			margin-bottom: 20px;
+		}
+		&__txt {
+			display: none;
+		}
+	}
 }

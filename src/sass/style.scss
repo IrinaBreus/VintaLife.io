@@ -9,6 +9,7 @@ body {
     font-family: "Montserrat", sans-serif;
     position: relative;
     // background: var(--main);
+    line-height: 105%;
 }
 
 :root {
@@ -22,6 +23,12 @@ body {
     display: none !important;
     // display: '';
     
+}
+
+ol [class],
+ul [class] {
+    list-style: none;
+    padding: 0;
 }
 
 @import 'base/mixins';

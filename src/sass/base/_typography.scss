@@ -70,6 +70,18 @@
 }
 
 @media (max-width: 1200px) {
+    .txt-main {
+        font-size: 20px;
+        &_16 {
+            font-size: 16px;
+        }
+        &_14 {
+            font-size: 14px;
+        }
+    }
+    .title {
+        font-size: 32px;
+    }
     .ml130 {
         margin-left: 15%;
     }
@@ -106,9 +118,16 @@
     .subtitle {
         font-size: 18px;
     }
+    .title span {
+        font-size: 30px;
+    }
 }
 @media (max-width: 374px) {
     .title {
         font-size: 36px;
+        span {
+            font-size: 28px;
+        }
+        
     }
 }

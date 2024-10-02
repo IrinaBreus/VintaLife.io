@@ -21,13 +21,14 @@
         gap: 6px 60px;
         justify-content: flex-end;
         input {
+            font-family: "Montserrat";
             width: 100%;
             padding: 22px 30px;
             font-weight: 400;
             font-size: 16px;
             line-height: 105%;
             color: #000000;
-            placeholder {
+            &::placeholder {
                 color: #2d2d2d;
             }
         }
