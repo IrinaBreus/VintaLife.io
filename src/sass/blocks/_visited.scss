@@ -1,5 +1,5 @@
 .visited {
-	// opacity: 0;
+	position: relative;
 	padding: 50px 0 110px;
 	&__wrapper {
 		display: grid;
@@ -10,7 +10,6 @@
 		padding-top: 44px;
 		margin-bottom: 40px;
 	}
-	
 	&__map {
 		grid-area: 1 / 3 / 3 / 4;
 		width: 100%;
@@ -44,6 +43,15 @@
 	&__txt {
 		margin-bottom: 66px;
 	}
+	&__bg {
+		position: absolute;
+		bottom: -2px;
+		right: 0;
+		z-index: -1;
+		img {
+			width: 100%;
+		}
+	}
 }
 
 @media (max-width: 1600px) {
@@ -76,6 +84,13 @@
 		}
 		&__map {
 			grid-area: 2 / 2 / 3 / 3;
+		}
+		&__bg {
+			bottom: -4px;
+			right: -106px;
+			img {
+				width: 80%;
+			}
 		}
 	}
 }
@@ -112,11 +127,15 @@
 		&__txt {
 			display: none;
 		}
+		&__bg img {
+			width: 100%;
+		}
 	}
 }
 
 @media (max-width: 576px) {
     .visited {
+		padding: 40px 0 80px;
 		&__contacts {
 			grid-area: 3 / 1 / 4 / 2;
 			li {

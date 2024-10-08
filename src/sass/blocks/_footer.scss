@@ -40,6 +40,9 @@
     }
     &__btn {
         border: 1px solid var(--white);
+        &:hover {
+            background: var(--green) !important;
+        }
     }
     &__protection {
         font-weight: 400;
