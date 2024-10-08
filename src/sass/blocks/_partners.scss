@@ -1,6 +1,7 @@
 .partners {
     padding: 100px 0 50px;
     text-align: center;
+    position: relative;
     &__title {
         margin-bottom: 40px;
     }
@@ -28,6 +29,17 @@
         }
         &:hover img {
             filter: grayscale(0);
+        }
+    }
+    &__bg {
+        width: 394px;
+        
+        position: absolute;
+        right: 0;
+        top: 214px;
+        z-index: -1;
+        img {
+            @include img-contain;
         }
     }
 }
@@ -77,6 +89,9 @@
                 border-left: 1px solid rgba(45, 45, 45, 0.5);
             }
         }
+        &__bg {
+            top: 480px;
+        }
     }
 }
 
@@ -107,6 +122,9 @@
                 filter: grayscale(0);
             }
         }
+        &__bg {
+            top: 418px;
+        }
     }
 }
 
@@ -132,6 +150,12 @@
             &:nth-child(4) {
                 padding: 0 20px;
             }
+        }
+        &__bg {
+            width: 234px;
+            height: 401px;
+            bottom: -218px;
+            top: auto;
         }
     }
 }

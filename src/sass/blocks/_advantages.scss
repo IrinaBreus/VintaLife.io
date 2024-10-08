@@ -1,6 +1,7 @@
 .advantages {
     position: relative;
     padding: 100px 0 140px;
+    z-index: 0;
     &__txt {
         width: 100%;
         display: flex;
@@ -85,6 +86,7 @@
         position: relative;
         padding: 40px 0;
         overflow: hidden;
+        z-index: 2;
         &__txt {
             display: grid;
             grid-template-rows: repeat(5, max-content);

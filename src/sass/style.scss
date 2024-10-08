@@ -31,6 +31,10 @@ ul [class] {
     padding: 0;
 }
 
+a[class] {
+    text-decoration: none;
+}
+
 @import 'base/mixins';
 @import 'base/*.scss';
 @import 'blocks/*.scss';
