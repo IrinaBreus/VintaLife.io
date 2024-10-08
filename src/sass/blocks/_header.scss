@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: 8fr 5fr;
     column-gap: 0;
-    z-index: 1;
+    z-index: 10;
     &__main-block {
         position: relative;
         padding-right: 32px;
@@ -253,6 +253,7 @@
 
 @media (max-width: 576px) {
     .header {
+        z-index: 1;
         &__main-block {
             overflow: visible;
         }
