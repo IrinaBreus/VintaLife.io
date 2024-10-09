@@ -16,7 +16,7 @@
   \************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/burger */ \"./src/js/modules/burger.js\");\n\r\n// import calcScroll from './modules/calcScroll';\r\n// import scrollUp from './modules/scrollUp';\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n'use stricti';\r\n\r\n(0,_modules_burger__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n// scrollUp();\r\n// calcScroll();\r\n});\n\n//# sourceURL=webpack://gulp-start/./src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/burger */ \"./src/js/modules/burger.js\");\n/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/slider */ \"./src/js/modules/slider.js\");\n\r\n\r\n// import calcScroll from './modules/calcScroll';\r\n// import scrollUp from './modules/scrollUp';\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n'use stricti';\r\n\r\n(0,_modules_burger__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_slider__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n// scrollUp();\r\n// calcScroll();\r\n});\n\n//# sourceURL=webpack://gulp-start/./src/js/main.js?");
 
 /***/ }),
 
@@ -26,7 +26,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
   \**********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\nconst burger = () => {\r\n    const trigger = document.querySelector('.nav-panel__menu-btns'),\r\n          burger = document.querySelector('.burger'),\r\n          lists = burger.querySelectorAll('.burger__menu li');\r\n\r\n          console.log('111');\r\n    trigger.addEventListener('click', () => {\r\n        burger.classList.add('burger-active');\r\n    });\r\n\r\n    lists.forEach(list => {\r\n        list.addEventListener('click', () => {\r\n            burger.classList.remove('burger-active');\r\n        })\r\n    })\r\n\r\n    burger.addEventListener('click', (e) => {\r\n        if (e.target === burger && e.target !== document.querySelector('.burger__wrapper')) {\r\n            burger.classList.remove('burger-active');\r\n        }\r\n    })\r\n    document.addEventListener('keydown', (e) => {\r\n        if (e.code === 'Escape' && burger.classList.contains('burger-active')) {\r\n            burger.classList.remove('burger-active');\r\n        }\r\n    })\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (burger);\n\n//# sourceURL=webpack://gulp-start/./src/js/modules/burger.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nconst burger = () => {\r\n    const trigger = document.querySelector('.nav-panel__menu-btns'),\r\n          burger = document.querySelector('.burger'),\r\n          lists = burger.querySelectorAll('.burger__menu li');\r\n\r\n    trigger.addEventListener('click', () => {\r\n        burger.classList.add('burger-active');\r\n    });\r\n\r\n    lists.forEach(list => {\r\n        list.addEventListener('click', () => {\r\n            burger.classList.remove('burger-active');\r\n        })\r\n    })\r\n\r\n    burger.addEventListener('click', (e) => {\r\n        if (e.target === burger && e.target !== document.querySelector('.burger__wrapper')) {\r\n            burger.classList.remove('burger-active');\r\n        }\r\n    })\r\n    document.addEventListener('keydown', (e) => {\r\n        if (e.code === 'Escape' && burger.classList.contains('burger-active')) {\r\n            burger.classList.remove('burger-active');\r\n        }\r\n    })\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (burger);\n\n//# sourceURL=webpack://gulp-start/./src/js/modules/burger.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/slider.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/slider.js ***!
+  \**********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\nconst slider = () => {\r\n    console.log('11');\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (slider);\n\n//# sourceURL=webpack://gulp-start/./src/js/modules/slider.js?");
 
 /***/ })
 

@@ -3,7 +3,6 @@ const burger = () => {
           burger = document.querySelector('.burger'),
           lists = burger.querySelectorAll('.burger__menu li');
 
-          console.log('111');
     trigger.addEventListener('click', () => {
         burger.classList.add('burger-active');
     });
