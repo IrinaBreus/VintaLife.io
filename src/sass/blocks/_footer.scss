@@ -26,6 +26,10 @@
         font-size: 16px;
         color: var(--white);
         text-decoration: none;
+        transition: all .6s;
+        &:hover {
+            color: var(--red);
+        }
     }
     &__contacts {
         display: flex;
