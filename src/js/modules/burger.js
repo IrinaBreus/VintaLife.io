@@ -1,5 +1,5 @@
 const burger = () => {
-    const trigger = document.querySelector('.nav-panel__menu-btns'),
+    const trigger = document.querySelector('.nav-panel__menu-btn'),
           burger = document.querySelector('.burger'),
           lists = burger.querySelectorAll('.burger__menu li');
 

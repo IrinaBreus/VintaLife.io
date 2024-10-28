@@ -10,6 +10,7 @@
     &__title {
         text-align: center;
         margin-bottom: 40px;
+        color: var(--main);
     }
     &__item-img {
         width: 100%;
@@ -38,8 +39,9 @@
         right: 0;
         letter-spacing: .3rem;
         transition: all .7s;
+        color: white;
         span {
-            color: var(--white);
+            color: white;
         }
         &_mini {
             font-size: 34px;
@@ -58,13 +60,13 @@
             font-weight: 600;
             font-size: 25px;
             line-height: 105%;
-            color: var(--white);
+            color: white;
             margin-bottom: 6px;
         }
         a {
             font-weight: 700;
             font-size: 16px;
-            color: var(--white);
+            color: white;
             text-decoration: none;
         }
     }

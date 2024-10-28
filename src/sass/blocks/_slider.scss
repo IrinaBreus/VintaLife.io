@@ -1,7 +1,6 @@
 .slider {
     width: 100%;
     position: relative;
-    border: 2px solid blue;
     display: grid;
     grid-template-columns: 1fr 12fr 1fr;
     gap: 25px;
@@ -32,12 +31,17 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        transition: all .6s;
         &:hover {
             background: var(--black);
         }
         svg {
             width: 14px;
             height: 24px;
+            path {
+                transition: all .6s;
+                fill: var(--white);
+            }
         }
         &_prev {
             margin-left: auto;
@@ -71,6 +75,22 @@
     }
 }
 
+.theme {
+    .slider {
+        &__btn {
+            background: var(--main);
+            transition: all .6s;
+            &:hover {
+                background:rgb(215, 215, 215);
+            }
+            svg {
+                path {
+                    fill: #102f28;
+                }
+            }
+        }
+    }
+}
 .item_active {
     .catalog__item-title {
         top: 65px !important;

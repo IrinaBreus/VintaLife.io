@@ -4,6 +4,7 @@
     position: relative;
     &__title {
         margin-bottom: 40px;
+        color: var(--main);
     }
     &__wrapper {
         display: grid;
@@ -15,6 +16,7 @@
         border: 1px solid rgba(45, 45, 45, 0.5);
         border-left: none;
         height: 100%;
+        background: var(--white);
         &:first-child {
             padding: 40px 50px 60px;
             border-left: 1px solid rgba(45, 45, 45, 0.5);
@@ -29,6 +31,24 @@
         }
         &:hover img {
             filter: grayscale(0);
+        }
+    }
+    &__bg {
+        position: absolute;
+        right: 0;
+        top: 242px;
+        z-index: -1;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.theme .partners {
+    &__block {
+        background: #0f0f0f;
+        &:nth-child(2n) {
+            background: #0a0a0a;
         }
     }
     &__bg {

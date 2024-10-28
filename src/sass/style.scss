@@ -2,14 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    // font-family: "Monotype Corsiva", "SovMod", "Montserrat",  sans-serif;
-    color: #2d2d2d;
 }
 body {
     font-family: "Montserrat", sans-serif;
     position: relative;
-    // background: var(--main);
     line-height: 105%;
+    background: var(--bg);
 }
 
 :root {
@@ -18,11 +16,29 @@ body {
     --white: #FFFFFF;
     --green: #102f28;
     --red: #c73d42;
+    --bg: #FFFFFF;
 }
+
+body.theme {
+    --main: #FFFFFF;
+    --white: #2d2d2d;
+    --black: #FFFFFF;
+    --bg: #0f0f0f;
+}
+
 .black {
-    display: none !important;
-    // display: '';
-    
+    display: none ;
+}
+
+.theme .black {
+    display: block;   
+}
+
+.white {
+    display: '';
+}
+.theme .white {
+    display: none;
 }
 
 ol [class],

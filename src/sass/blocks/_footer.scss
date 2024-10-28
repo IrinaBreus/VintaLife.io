@@ -1,7 +1,8 @@
 .footer {
     position: relative;
     padding: 50px 0;
-    background: var(--main);
+    background: #000;
+    color: var(--main);
     &__wrapper {
         display: flex;
         align-items: center;
@@ -24,7 +25,7 @@
     &__list-link {
         font-weight: 400;
         font-size: 16px;
-        color: var(--white);
+        color: white;
         text-decoration: none;
         transition: all .6s;
         &:hover {
@@ -40,10 +41,12 @@
         display: none;
     }
     &__tel {
-        color: var(--white);
+        color: white;
     }
     &__btn {
-        border: 1px solid var(--white);
+        border: 1px solid white;
+        background: transparent;
+        color: white;
         &:hover {
             background: var(--green) !important;
         }
@@ -51,7 +54,7 @@
     &__protection {
         font-weight: 400;
         font-size: 14px;
-        color: var(--white);
+        color: white;
         opacity: .5;
         text-align: center;
         span {
