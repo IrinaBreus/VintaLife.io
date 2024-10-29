@@ -194,6 +194,9 @@
         &__btn_more {
             display: block;
             margin: 0 auto;
+            &:hover {
+                color: var(--main);
+            }
         }
     }
 }

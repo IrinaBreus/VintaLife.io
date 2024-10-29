@@ -16,7 +16,7 @@
   \************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/burger */ \"./src/js/modules/burger.js\");\n/* harmony import */ var _modules_changeTheme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/changeTheme */ \"./src/js/modules/changeTheme.js\");\n/* harmony import */ var _modules_scrollSmooth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/scrollSmooth */ \"./src/js/modules/scrollSmooth.js\");\n/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/slider */ \"./src/js/modules/slider.js\");\n\r\n\r\n\r\n\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n'use stricti';\r\n\r\n(0,_modules_burger__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_slider__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\r\n(0,_modules_scrollSmooth__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n(0,_modules_changeTheme__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n});\n\n//# sourceURL=webpack://gulp-start/./src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/burger */ \"./src/js/modules/burger.js\");\n/* harmony import */ var _modules_changeTheme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/changeTheme */ \"./src/js/modules/changeTheme.js\");\n/* harmony import */ var _modules_modals__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/modals */ \"./src/js/modules/modals.js\");\n/* harmony import */ var _modules_scrollSmooth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/scrollSmooth */ \"./src/js/modules/scrollSmooth.js\");\n/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/slider */ \"./src/js/modules/slider.js\");\n\r\n\r\n\r\n\r\n\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n'use stricti';\r\n\r\n(0,_modules_burger__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_slider__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\r\n(0,_modules_scrollSmooth__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\r\n(0,_modules_changeTheme__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n(0,_modules_modals__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n});\n\n//# sourceURL=webpack://gulp-start/./src/js/main.js?");
 
 /***/ }),
 
@@ -30,6 +30,16 @@ eval("__webpack_require__.r(__webpack_exports__);\nconst burger = () => {\r\n   
 
 /***/ }),
 
+/***/ "./src/js/modules/calcScroll.js":
+/*!**************************************!*\
+  !*** ./src/js/modules/calcScroll.js ***!
+  \**************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n const calcScroll = () => {\r\n    let div = document.createElement('div');\r\n    div.style.width = '50px';\r\n    div.style.height = '50px';\r\n    div.style.overflowY = 'scroll';\r\n    div.style.visibility = 'hidden';\r\n    document.body.append(div);\r\n\r\n    let scrollWidth = div.offsetWidth - div.clientWidth;\r\n    div.remove();\r\n    return scrollWidth;\r\n};\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (calcScroll);\r\n\r\n// Применение:\r\n// const scroll = calcScroll();\r\n// при открытии модалки добавить\r\n// document.body.style.marginRight = `${scroll}px`;\r\n// при закрытии модалки добавить\r\n// document.body.style.marginRight = '0px';\n\n//# sourceURL=webpack://gulp-start/./src/js/modules/calcScroll.js?");
+
+/***/ }),
+
 /***/ "./src/js/modules/changeTheme.js":
 /*!***************************************!*\
   !*** ./src/js/modules/changeTheme.js ***!
@@ -37,6 +47,16 @@ eval("__webpack_require__.r(__webpack_exports__);\nconst burger = () => {\r\n   
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 eval("__webpack_require__.r(__webpack_exports__);\nconst changeTheme = () => {\r\n    const trigger = document.querySelector('.nav-panel__theme-btn'),\r\n          body = document.querySelector('body');\r\n\r\n    trigger.addEventListener('click', () => {\r\n        body.classList.toggle('theme');\r\n    })\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (changeTheme);\n\n//# sourceURL=webpack://gulp-start/./src/js/modules/changeTheme.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/modals.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/modals.js ***!
+  \**********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _calcScroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./calcScroll */ \"./src/js/modules/calcScroll.js\");\n\r\n\r\nconst modals = () => {\r\n    const triggers = document.querySelectorAll('[data-modal]'),\r\n          modal = document.querySelector('.popup'),\r\n          close = modal.querySelector('.popup__close');\r\n    \r\n    const scroll = (0,_calcScroll__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n\r\n    triggers.forEach(btn => {\r\n        btn.addEventListener('click', () => {        \r\n            modal.style.display = 'flex';\r\n            document.body.style.overflow = 'hidden';\r\n            document.body.style.marginRight = `${scroll}px`;\r\n        })\r\n    });\r\n    \r\n    close.addEventListener('click', () => {\r\n        closeModal();\r\n    });\r\n\r\n    modal.addEventListener('click', (e) => {\r\n        if (e.target === modal) closeModal();\r\n    });\r\n\r\n    document.addEventListener('keydown', (e) => {\r\n        if (e.code ==='Escape' && modal.style.display == 'flex') {\r\n            closeModal();\r\n        }\r\n    })\r\n\r\n    function closeModal() {\r\n        close.parentElement.parentElement.style.display = 'none';\r\n        document.body.style.overflow = '';\r\n        document.body.style.marginRight = `0px`;\r\n    }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (modals);\n\n//# sourceURL=webpack://gulp-start/./src/js/modules/modals.js?");
 
 /***/ }),
 

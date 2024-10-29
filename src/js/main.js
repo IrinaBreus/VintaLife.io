@@ -1,5 +1,6 @@
 import burger from './modules/burger';
 import changeTheme from './modules/changeTheme';
+import modals from './modules/modals';
 import scrollSmooth from './modules/scrollSmooth';
 import slider from './modules/slider';
 
@@ -10,4 +11,5 @@ burger();
 slider();
 scrollSmooth();
 changeTheme();
+modals();
 });

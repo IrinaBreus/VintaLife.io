@@ -1,4 +1,4 @@
-const calcScroll = () => {
+ const calcScroll = () => {
     let div = document.createElement('div');
     div.style.width = '50px';
     div.style.height = '50px';
@@ -12,3 +12,10 @@ const calcScroll = () => {
 };
 
 export default calcScroll;
+
+// Применение:
+// const scroll = calcScroll();
+// при открытии модалки добавить
+// document.body.style.marginRight = `${scroll}px`;
+// при закрытии модалки добавить
+// document.body.style.marginRight = '0px';

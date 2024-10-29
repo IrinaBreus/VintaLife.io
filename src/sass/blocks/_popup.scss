@@ -1,0 +1,197 @@
+.popup {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+    align-items: center;
+    justify-content: center;
+    &__dialog {
+        position: relative;
+        width: 920px;
+        background: var(--bg);
+        padding: 100px 93px;
+    }
+    &__bg {
+        position: absolute;
+        z-index: 0;
+        &_top {
+            top: 0;
+            right: 0;
+        }
+        &_bottom {
+            bottom: 0;
+            left: 0;
+        }
+    }
+    &__close {
+        position: absolute;
+        z-index: 1;
+        width: 32px;
+        height: 32px;
+        top: 50px;
+        right: 50px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        &::after, &::before {
+            content: '';
+            width: 46px;
+            height: 2px;
+            background: #000;
+            border-radius: 4px;
+            position: absolute;
+            top: 14px;
+            right: -8px;
+        }
+        &::after {
+            transform: rotate(45deg);
+        }
+        &::before {
+            transform: rotate(-45deg);
+        }
+    }
+    &__title {
+        position: relative;
+        text-align: center;
+        margin-bottom: 8px;
+        color: var(--main);
+    }
+    &__img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 26px;
+    }
+    &__txt {
+        position: relative;
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 1.2;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 40px;
+        width: 90%;
+    }
+    &__form {
+        position: relative;
+        margin: 0 auto;
+        width: 65%;
+    }
+    &__form-txt {
+        font-size: 14px;
+        text-align: center;
+    }
+    &__btn {
+        position: relative;
+        margin: 0 auto;
+    }
+}
+
+.popup-error {
+    display: none;
+}
+.popup-ok {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .popup {
+        &__dialog {
+            width: 820px;
+            padding: 100px 83px;
+        }
+        &__form {
+            width: 75%;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .popup {
+        &__dialog {
+            width: 700px;
+            padding: 50px;
+        }
+        &__close {
+            top: 20px;
+            right: 30px;
+            &::after, &::before {
+                content: '';
+                width: 30px;
+            }
+        }
+        &__title {
+            font-size: 30px;
+        }
+        &__txt {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        &__form {
+            position: relative;
+            margin: 0 auto;
+            width: 75%;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .popup {
+        &__dialog {
+            width: 90%;
+            padding: 50px 30px;
+        }
+        &__close {
+            top: 20px;
+            right: 30px;
+            &::after, &::before {
+                content: '';
+                width: 26px;
+            }
+        }
+        &__title {
+            font-family: "Montserrat";
+            letter-spacing: normal;
+            font-size: 24px;
+            line-height: 130%;
+            font-weight: 500;
+        }
+        &__txt {
+            font-size: 18px;
+        }
+        &__form {
+            position: relative;
+            margin: 0 auto;
+            width: 90%;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .popup {
+        &__dialog {
+            width: 90%;
+            padding: 80px 18px;
+        }
+    }
+}
+
+@media (max-width: 374px) {
+    .popup {
+        &__title {
+            font-size: 20px;
+        }
+        &__txt {
+            font-size: 16px;
+        }
+        &__form {
+            width: 95%;
+        }
+    }
+}

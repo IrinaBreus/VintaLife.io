@@ -26,7 +26,7 @@
                     </div>
                     <div class="nav-panel__feedback">
                         <a href="tel:+7-962-88-777-51">+7 (962) 88-777-51</a>
-                        <button class="btn btn_green">Заказать обратный звонок</button>
+                        <button class="btn btn_green" data-modal>Заказать обратный звонок</button>
                     </div>
                     <div class="nav-panel__menu-triggers">
                         <button class="nav-panel__theme-btn">
@@ -37,9 +37,9 @@
                                 <use xlink:href="icons/symbol-defs.svg#icon-toggle-white "></use>
                             </svg>
                         </button>
-                        <button class="nav-panel__menu-btn">
+                        <div class="nav-panel__menu-btn">
                             <span></span><span></span><span></span><span></span>
-                        </button>
+                        </div>
                     </div>
                 </nav>
                 <div class="header__descr">
@@ -52,8 +52,8 @@
                             <span>КУХНИ</span>
                             <span>В СОЧИ</span>
                         </h1>
-                        <button class="btn btn_black mb10 ml130">Бесплатный замер</button>
-                        <button class="btn btn_red ml130">Расчет стоимости кухни</button>
+                        <button class="btn btn_black mb10 ml130" data-modal>Бесплатный замер</button>
+                        <button class="btn btn_red ml130" data-modal>Расчет стоимости кухни</button>
                     </div>
                     <div class="header__links ml-head">
                         <a href="#" class="header__catalog header__catalog_disp">Более 1000 фото в каталоге</a>
@@ -87,7 +87,7 @@
                     </div>
                 </div>
                 <div class="header__feedback">
-                    <button class="btn btn_green">Заказать обратный звонок</button>
+                    <button class="btn btn_green" data-modal>Заказать обратный звонок</button>
                     <a href="tel:+7-962-88-777-51">+7 (962) 88-777-51</a>
                 </div>
                 <div class="header__bg">
@@ -372,7 +372,7 @@
                                 </span>
                             </li>
                         </ul>
-                        <button class="visited__btn btn btn_black">Бесплатный замер</button>
+                        <button class="visited__btn btn btn_black" data-modal>Бесплатный замер</button>
                         <div class="visited__txt txt-main_16">Звонки и заявки с сайта принимаются без выходных</div>
                         <h3 class="visited__action subtitle">Скажите, что пришли с сайта и получите скидку 20%</h3>
                     </div>
@@ -432,13 +432,77 @@
                 </div>
                 <div class="footer__contacts">
                     <a class="footer__tel" href="tel:+79628877751">+7 (962) 88-777-51</a>
-                    <button class="btn btn_black footer__btn">Заказать обратный звонок</button>
+                    <button class="btn btn_black footer__btn" data-modal>Заказать обратный звонок</button>
                 </div>
             </div>
             <div class="footer__protection">Все права защищены © <span>2022</span></div>
         </div>
     </footer>
 
+    <div class="popup">
+        <div class="popup__dialog">
+            <button class="popup__close"> </button> 
+            <div class="popup__bg popup__bg_top">
+                <img src="img/bg/popTopW.png" alt="">
+                <img class="black" src="img/bg/popTopB.png" alt="">
+            </div>
+            <div class="popup__bg popup__bg_bottom">
+                <img src="img/bg/popBotW.png" alt="">
+                <img class="black" src="img/bg/popBotB.png" alt="">
+            </div>
+            <div class="popup__title title">
+                менеджер перезвонит
+                вам в ближайшее время
+            </div>
+            <div class="popup__txt">Заполните поля ниже</div>
+            <form action="#" class="popup__form form">
+                <input type="text" placeholder="Имя" name="имя" required>
+                <input type="tel" placeholder="Номер телефона" name="номер телефона" required>
+                <button type="submit" class="btn btn_dark">Отправить заявку</button>
+                <div class="popup__form-txt">Нажимая на кнопку вы даете согласие на обработку данных</div>
+            </form>
+        </div>
+    </div>
+    <div class="popup popup-ok">
+        <div class="popup__dialog"> 
+            <div class="popup__bg popup__bg_top">
+                <img src="img/bg/popTopW.png" alt="">
+                <img class="black" src="img/bg/popTopB.png" alt="">
+            </div>
+            <div class="popup__bg popup__bg_bottom">
+                <img src="img/bg/popBotW.png" alt="">
+                <img class="black" src="img/bg/popBotB.png" alt="">
+            </div>
+            <div class="popup__img">
+                <img src="icons/ok.svg" alt="error logo">
+            </div>
+            <div class="popup__txt">Спасибо! <br>
+                Ваша заявка была отправлена и в ближашее
+                время будет обработана
+            </div>
+            <button class="btn btn_dark popup__btn" data-close>Xорошо</button>
+        </div>
+    </div>
+    <div class="popup popup-error">
+        <div class="popup__dialog">
+            <div class="popup__bg popup__bg_top">
+                <img src="img/bg/popTopW.png" alt="">
+                <img class="black" src="img/bg/popTopB.png" alt="">
+            </div>
+            <div class="popup__bg popup__bg_bottom">
+                <img src="img/bg/popBotW.png" alt="">
+                <img class="black" src="img/bg/popBotB.png" alt="">
+            </div>
+            <div class="popup__img">
+                <img src="icons/error.svg" alt="error logo">
+            </div>
+            <div class="popup__txt">Неправильно заполнены поля! <br>
+                Поле «Имя» обязательно для заполнения! <br>
+                Поле «Телефон» обязательно для заполнения!</div>
+            <button class="btn btn_dark popup__btn" data-close>Xорошо</button>
+        </div>
+    </div>
+    
     <!-- <svg>
         <use xlink:href="icons/symbol-defs.svg#icon-Brush"></use>
     </svg> -->
