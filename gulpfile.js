@@ -24,8 +24,11 @@ const fonter = require('gulp-fonter');
 const ttf2woff2 = require('gulp-ttf2woff2');
 const gulpIf = require('gulp-if');
 
+// const dist = "./dist/";
+const dist = "D:/programs/MAMP/htdocs/testing/";
+
 // Проверка для production
-const isProd = process.argv.includes("--production");
+const isProd = process.argv.includes("--production"),
 isDev = !isProd;
 
 
@@ -35,20 +38,20 @@ const html = () => {
     .pipe(fileInclude())
     .pipe(webpHtml())
     .pipe(htmlmin({ collapseWhitespace: isProd }))
-    .pipe(dest("./dist"))
+    .pipe(dest(dist))
     .pipe(browserSync.stream());
 }
 
 // Обработка IMG
 const img = () => {
     return src("./src/img/**/*")
-    .pipe(newer('./dist/img'))
+    .pipe(newer(`${dist}img`))
     .pipe(webp())
-    .pipe(dest("./dist/img"))
+    .pipe(dest(`${dist}img`))
     .pipe(src("./src/img/**/*"))
-    .pipe(newer('./dist/img'))
+    .pipe(newer(`${dist}img`))
     .pipe(gulpIf(isProd, imagemin({verbose: true})))
-    .pipe(dest("./dist/img"))
+    .pipe(dest(`${dist}img`))
     .pipe(browserSync.stream());
 }
 
@@ -60,7 +63,7 @@ const js = () => {
                     output: {
                         filename: 'script.js'
                     }}))
-    .pipe(dest("./dist/js", {sourcemaps: isDev} ))
+    .pipe(dest(`${dist}js`, {sourcemaps: isDev} ))
     .pipe(browserSync.stream());
 }
 
@@ -73,17 +76,17 @@ const scss = () => {
     .pipe(autoprefixer())
     .pipe(shorthand())
     .pipe(gcmq())
-    .pipe(dest("./dist/css", {sourcemaps: isDev}))
+    .pipe(dest(`${dist}css`, {sourcemaps: isDev}))
     .pipe(rename({suffix: '.min'}))
     .pipe(csso())
-    .pipe(dest("./dist/css", {sourcemaps: isDev}))
+    .pipe(dest(`${dist}css`, {sourcemaps: isDev}))
     .pipe(browserSync.stream());
 }
 
 // обработка icons
 const icons = () => {
     return src("./src/icons/**/*")
-    .pipe(dest("./dist/icons"))
+    .pipe(dest(`${dist}icons`))
     .pipe(browserSync.stream());
 };
 
@@ -91,17 +94,23 @@ const icons = () => {
 // Обработка Fonts
 const font = () => {
     return src("./src/fonts/*")
-    .pipe(newer('./dist/fonts'))
+    .pipe(newer(`${dist}fonts`))
     .pipe(fonter({formats: ["ttf", "woff", "eot", "svg"]}))
-    .pipe(dest("./dist/fonts"))
+    .pipe(dest(`${dist}fonts`))
     .pipe(gulpIf(isProd,ttf2woff2()))
-    .pipe(dest("./dist/fonts"))
+    .pipe(dest(`${dist}fonts`))
     .pipe(browserSync.stream());
 }
 
+const copy = () => {
+    return src("./src/*.php")
+        .pipe(dest(dist))
+        .pipe(browserSync.stream());
+};
+
 // Удаление директорий
 const clear = () => {
-    return del('./dist');
+    return del("./dist/");
 }
 
 
@@ -109,7 +118,7 @@ const clear = () => {
 const server = () => {
     browserSync.init({
         server: {
-            baseDir: "./dist"
+            baseDir: dist
         }
     });
 }
@@ -121,12 +130,13 @@ const watcher = () => {
     watch("./src/js/**/*.js", js);
     watch("./src/img/**/*");
     watch(".src/fonts/**/*");
+    watch("./src/*.php", copy);
 }
 
 
 const build = series (
     clear,
-    parallel(html, scss, js, img, font, icons)
+    parallel(html, scss, js, img, font, icons, copy)
 );
 
 const dev = series (
@@ -141,6 +151,7 @@ exports.js = js;
 exports.img = img;
 exports.font = font;
 exports.icons = icons;
+exports.copy = copy;
 
 // Сборка
 

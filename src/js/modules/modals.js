@@ -3,9 +3,15 @@ import calcScroll from "./calcScroll";
 const modals = () => {
     const triggers = document.querySelectorAll('[data-modal]'),
           modal = document.querySelector('.popup'),
-          close = modal.querySelector('.popup__close');
+          close = modal.querySelector('.popup__close'),
+          closeBtns = document.querySelectorAll('[data-close]');
     
     const scroll = calcScroll();
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            closeModal(btn);
+        })
+    });
 
     triggers.forEach(btn => {
         btn.addEventListener('click', () => {        
@@ -16,21 +22,21 @@ const modals = () => {
     });
     
     close.addEventListener('click', () => {
-        closeModal();
+        closeModal(close);
     });
 
     modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
+        if (e.target === modal) closeModal(close);
     });
 
     document.addEventListener('keydown', (e) => {
         if (e.code ==='Escape' && modal.style.display == 'flex') {
-            closeModal();
+            closeModal(close);
         }
     })
 
-    function closeModal() {
-        close.parentElement.parentElement.style.display = 'none';
+    function closeModal(btn) {
+        btn.parentElement.parentElement.style.display = 'none';
         document.body.style.overflow = '';
         document.body.style.marginRight = `0px`;
     }

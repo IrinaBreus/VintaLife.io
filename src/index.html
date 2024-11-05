@@ -266,11 +266,11 @@
         <div class="container">
             <h2 class="feedback__title title">ЗАКАЖИТЕ БЕСПЛАТНЫЙ ЗАМЕР И ДИЗАЙН</h2>
             <div class="feedback__subtitle">Оставьте заявку и мы вам перезвоним</div>
-            <form class="feedback__form">
-                <input type="text" placeholder="Имя">
-                <input type="text" placeholder="Ваш телефон">
+            <form class="feedback__form form">
+                <input name="name" type="text" placeholder="Имя">
+                <input name="phone" type="text" placeholder="Ваш телефон">
                 <button class="btn">Отправить заявку</button>
-                <p>Нажимая на кнопку вы даете согласие на обработку данных</p>
+                <p class="feedback__txt">Нажимая на кнопку вы даете согласие на обработку данных</p>
             </form>
         </div>
     </section>
@@ -329,9 +329,9 @@
                             Оставьте заявку и мы вам перезвоним
                         </span>
                     </div>
-                    <form class="form  credit__form">
-                        <input type="text" placeholder="Имя">
-                        <input type="tel" placeholder="Номер телефона">
+                    <form class="credit__form form">
+                        <input name="name" type="text" placeholder="Имя">
+                        <input name="phone" type="tel" placeholder="Номер телефона">
                         <button class="btn btn_dark form__btn">Отправить заявку</button>
                         <p class="txt-main_14">Нажимая на кнопку вы даете согласие на обработку данных</p>
                     </form>
@@ -455,10 +455,10 @@
                 вам в ближайшее время
             </div>
             <div class="popup__txt">Заполните поля ниже</div>
-            <form action="#" class="popup__form form">
-                <input type="text" placeholder="Имя" name="имя" required>
-                <input type="tel" placeholder="Номер телефона" name="номер телефона" required>
-                <button type="submit" class="btn btn_dark">Отправить заявку</button>
+            <form class="popup__form form"type="submit">
+                <input name="name" type="text" placeholder="Имя" name="name" required>
+                <input name="phone" type="tel" placeholder="Номер телефона" name="phone" required>
+                <button  class="btn btn_dark">Отправить заявку</button>
                 <div class="popup__form-txt">Нажимая на кнопку вы даете согласие на обработку данных</div>
             </form>
         </div>
