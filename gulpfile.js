@@ -24,8 +24,8 @@ const fonter = require('gulp-fonter');
 const ttf2woff2 = require('gulp-ttf2woff2');
 const gulpIf = require('gulp-if');
 
-// const dist = "./dist/";
-const dist = "D:/programs/MAMP/htdocs/testing/";
+const dist = "./dist/";
+// const dist = "D:/programs/MAMP/htdocs/testing/";
 
 // Проверка для production
 const isProd = process.argv.includes("--production"),

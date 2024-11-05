@@ -31,15 +31,15 @@ const form = () => {
                         form.reset();
                         setTimeout(() => {
                             modalOk.style.display = 'none';
-                        }, 2000);
+                        }, 3000);
                     }
                 })
             })
         })
         
-        function openModal(elem) {
-            document.querySelector('.popup').style.display = 'none';
-            elem.style.display = 'flex';
+    function openModal(elem) {
+        document.querySelector('.popup').style.display = 'none';
+        elem.style.display = 'flex';
     }
     
 }
