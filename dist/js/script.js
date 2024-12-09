@@ -1,1 +1,149 @@
-!function(){"use strict";var e=()=>{const e=document.querySelectorAll("[data-modal]"),t=document.querySelector(".popup"),n=t.querySelector(".popup__close"),o=document.querySelectorAll("[data-close]"),r=(()=>{let e=document.createElement("div");e.style.width="50px",e.style.height="50px",e.style.overflowY="scroll",e.style.visibility="hidden",document.body.append(e);let t=e.offsetWidth-e.clientWidth;return e.remove(),t})();function l(e){e.parentElement.parentElement.style.display="none",document.body.style.overflow="",document.body.style.marginRight="0px"}o.forEach((e=>{e.addEventListener("click",(()=>{l(e)}))})),e.forEach((e=>{e.addEventListener("click",(()=>{t.style.display="flex",document.body.style.overflow="hidden",document.body.style.marginRight=`${r}px`}))})),n.addEventListener("click",(()=>{l(n)})),t.addEventListener("click",(e=>{e.target===t&&l(n)})),document.addEventListener("keydown",(e=>{"Escape"===e.code&&"flex"==t.style.display&&l(n)}))},t=()=>{document.querySelectorAll('[href^="#"]').forEach((e=>{e.addEventListener("click",(function(e){if(e.preventDefault(),this.hash){const e=document.querySelector(this.hash).getBoundingClientRect();window.scrollTo({top:window.scrollY+e.top,behavior:"smooth"})}else window.scrollTo({left:0,top:0,behavior:"smooth"})}))}))};document.addEventListener("DOMContentLoaded",(()=>{(()=>{const e=document.querySelector(".nav-panel__menu-btn"),t=document.querySelector(".burger"),n=t.querySelectorAll(".burger__menu li");e.addEventListener("click",(()=>{t.classList.add("burger-active")})),n.forEach((e=>{e.addEventListener("click",(()=>{t.classList.remove("burger-active")}))})),t.addEventListener("click",(e=>{e.target===t&&e.target!==document.querySelector(".burger__wrapper")&&t.classList.remove("burger-active")})),document.addEventListener("keydown",(e=>{"Escape"===e.code&&t.classList.contains("burger-active")&&t.classList.remove("burger-active")}))})(),(()=>{const e=document.querySelector(".slider__field"),t=document.querySelector(".slider__btn_prev"),n=document.querySelector(".slider__btn_next"),o=document.querySelector(".slider__btn_more"),r=e.querySelector(".slider__item").offsetWidth,l=[...e.children];let c=0,d=2;function i(){l.forEach((e=>{e.style.display="none"}))}function s(){l.forEach(((e,t)=>{t<d&&(e.style.display="")}))}function a(o=0){t.style.display=0===c?"none":"",c==r*(e.children.length-o)?n.style.display="none":n.style.display=""}a(),t.addEventListener("click",(()=>{e.scrollLeft-=r,c-=r,a()})),n.addEventListener("click",(()=>{e.scrollLeft+=r,c+=r,window.innerWidth>1200?a(3):window.innerWidth<=1200&&window.innerWidth>768?a(2):window.innerWidth<=768&&window.innerWidth>576&&a(1)})),window.screen.availWidth<=768&&l.forEach((e=>{e.addEventListener("click",(()=>{e.classList.toggle("item_active")}))})),window.screen.availWidth<=576&&(i(),s(),o.addEventListener("click",(()=>{i(),d+=2,s(),d==l.length&&(o.style.display="none")})))})(),t(),(()=>{const e=document.querySelector(".nav-panel__theme-btn"),t=document.querySelector("body");e.addEventListener("click",(()=>{t.classList.toggle("theme")}))})(),e(),(()=>{const e=document.querySelectorAll(".form"),t=document.querySelector(".popup-ok"),n=document.querySelector(".popup-error");function o(e){document.querySelector(".popup").style.display="none",e.style.display="flex"}e.forEach((e=>{e.addEventListener("submit",(r=>{r.preventDefault();const l=new FormData(e);(async(e,t)=>{let n=await fetch("server.php",{method:"POST",body:t});return await n.text()})(0,l).then((e=>{console.log(e)})).catch().finally((()=>{const r=l.get("name"),c=l.get("phone");r&&c?(o(t),e.reset(),setTimeout((()=>{t.style.display="none"}),3e3)):o(n)}))}))}))})()}))}();
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (function() { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/js/main.js":
+/*!************************!*\
+  !*** ./src/js/main.js ***!
+  \************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/burger */ \"./src/js/modules/burger.js\");\n/* harmony import */ var _modules_changeTheme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/changeTheme */ \"./src/js/modules/changeTheme.js\");\n/* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/form */ \"./src/js/modules/form.js\");\n/* harmony import */ var _modules_modals__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/modals */ \"./src/js/modules/modals.js\");\n/* harmony import */ var _modules_scrollSmooth__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/scrollSmooth */ \"./src/js/modules/scrollSmooth.js\");\n/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/slider */ \"./src/js/modules/slider.js\");\n/* harmony import */ var _modules_yearDate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/yearDate */ \"./src/js/modules/yearDate.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n'use stricti';\r\n\r\n(0,_modules_burger__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_slider__WEBPACK_IMPORTED_MODULE_5__[\"default\"])();\r\n(0,_modules_scrollSmooth__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\r\n(0,_modules_changeTheme__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n(0,_modules_modals__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\r\n(0,_modules_form__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n\r\n(0,_modules_yearDate__WEBPACK_IMPORTED_MODULE_6__[\"default\"])();\r\n});\n\n//# sourceURL=webpack://gulp-start/./src/js/main.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/burger.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/burger.js ***!
+  \**********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\nconst burger = () => {\r\n    const trigger = document.querySelector('.nav-panel__menu-btn'),\r\n          burger = document.querySelector('.burger'),\r\n          lists = burger.querySelectorAll('.burger__menu li');\r\n\r\n    trigger.addEventListener('click', () => {\r\n        burger.classList.add('burger-active');\r\n    });\r\n\r\n    lists.forEach(list => {\r\n        list.addEventListener('click', () => {\r\n            burger.classList.remove('burger-active');\r\n        })\r\n    })\r\n\r\n    burger.addEventListener('click', (e) => {\r\n        if (e.target === burger && e.target !== document.querySelector('.burger__wrapper')) {\r\n            burger.classList.remove('burger-active');\r\n        }\r\n    })\r\n    document.addEventListener('keydown', (e) => {\r\n        if (e.code === 'Escape' && burger.classList.contains('burger-active')) {\r\n            burger.classList.remove('burger-active');\r\n        }\r\n    })\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (burger);\n\n//# sourceURL=webpack://gulp-start/./src/js/modules/burger.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/calcScroll.js":
+/*!**************************************!*\
+  !*** ./src/js/modules/calcScroll.js ***!
+  \**************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n const calcScroll = () => {\r\n    let div = document.createElement('div');\r\n    div.style.width = '50px';\r\n    div.style.height = '50px';\r\n    div.style.overflowY = 'scroll';\r\n    div.style.visibility = 'hidden';\r\n    document.body.append(div);\r\n\r\n    let scrollWidth = div.offsetWidth - div.clientWidth;\r\n    div.remove();\r\n    return scrollWidth;\r\n};\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (calcScroll);\r\n\r\n// Применение:\r\n// const scroll = calcScroll();\r\n// при открытии модалки добавить\r\n// document.body.style.marginRight = `${scroll}px`;\r\n// при закрытии модалки добавить\r\n// document.body.style.marginRight = '0px';\n\n//# sourceURL=webpack://gulp-start/./src/js/modules/calcScroll.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/changeTheme.js":
+/*!***************************************!*\
+  !*** ./src/js/modules/changeTheme.js ***!
+  \***************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\nconst changeTheme = () => {\r\n    const trigger = document.querySelector('.nav-panel__theme-btn'),\r\n          body = document.querySelector('body');\r\n\r\n    trigger.addEventListener('click', () => {\r\n        body.classList.toggle('theme');\r\n    })\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (changeTheme);\n\n//# sourceURL=webpack://gulp-start/./src/js/modules/changeTheme.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/form.js":
+/*!********************************!*\
+  !*** ./src/js/modules/form.js ***!
+  \********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\nconst form = () => {\r\n    const forms = document.querySelectorAll('.form'),\r\n          modalOk = document.querySelector('.popup-ok'),\r\n          modalError = document.querySelector('.popup-error');\r\n\r\n    const postData = async (url, data) => {\r\n        let res = await fetch(url, {\r\n            method: 'POST',\r\n            body: data\r\n        });\r\n\r\n        return await res.text();\r\n    }\r\n\r\n    forms.forEach(form => {\r\n        form.addEventListener('submit', (e) => {\r\n            e.preventDefault();\r\n\r\n            const formData = new FormData(form);\r\n            postData('server.php', formData)\r\n                .then(res => {\r\n                    console.log(res);\r\n                }).catch()\r\n                .finally(() => {\r\n                    const name = formData.get('name'),\r\n                          phone = formData.get('phone');\r\n                    if (!name || !phone) {\r\n                        openModal(modalError);\r\n                    } else {\r\n                        openModal(modalOk);\r\n                        form.reset();\r\n                        setTimeout(() => {\r\n                            modalOk.style.display = 'none';\r\n                            document.body.style.overflow = '';\r\n                            document.body.style.marginRight = `0px`;\r\n                        }, 3000);\r\n                    }\r\n                })\r\n            })\r\n        })\r\n        \r\n    function openModal(elem) {\r\n        document.querySelector('.popup').style.display = 'none';\r\n        elem.style.display = 'flex';\r\n    }\r\n    \r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (form);\n\n//# sourceURL=webpack://gulp-start/./src/js/modules/form.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/modals.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/modals.js ***!
+  \**********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _calcScroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./calcScroll */ \"./src/js/modules/calcScroll.js\");\n\r\n\r\nconst modals = () => {\r\n    const triggers = document.querySelectorAll('[data-modal]'),\r\n          modal = document.querySelector('.popup'),\r\n          close = modal.querySelector('.popup__close'),\r\n          closeBtns = document.querySelectorAll('[data-close]');\r\n    \r\n    const scroll = (0,_calcScroll__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n    closeBtns.forEach(btn => {\r\n        btn.addEventListener('click', () => {\r\n            closeModal(btn);\r\n        })\r\n    });\r\n\r\n    triggers.forEach(btn => {\r\n        btn.addEventListener('click', () => {        \r\n            modal.style.display = 'flex';\r\n            document.body.style.overflow = 'hidden';\r\n            document.body.style.marginRight = `${scroll}px`;\r\n        })\r\n    });\r\n    \r\n    close.addEventListener('click', () => {\r\n        closeModal(close);\r\n    });\r\n\r\n    modal.addEventListener('click', (e) => {\r\n        if (e.target === modal) closeModal(close);\r\n    });\r\n\r\n    document.addEventListener('keydown', (e) => {\r\n        if (e.code ==='Escape' && modal.style.display == 'flex') {\r\n            closeModal(close);\r\n        }\r\n    })\r\n\r\n    function closeModal(btn) {\r\n        btn.parentElement.parentElement.style.display = 'none';\r\n        document.body.style.overflow = '';\r\n        document.body.style.marginRight = `0px`;\r\n    }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (modals);\n\n//# sourceURL=webpack://gulp-start/./src/js/modules/modals.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/scrollSmooth.js":
+/*!****************************************!*\
+  !*** ./src/js/modules/scrollSmooth.js ***!
+  \****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\nconst scrollSmooth = () => {\r\n    const links = document.querySelectorAll('[href^=\"#\"]');\r\n    // const up = document.querySelector('.up');\r\n\r\n    links.forEach(link => {\r\n        link.addEventListener('click', function(e) {\r\n            e.preventDefault();\r\n            if (this.hash) {\r\n                const el = document.querySelector(this.hash);\r\n                const rect = el.getBoundingClientRect();\r\n                window.scrollTo({\r\n                    top: window.scrollY + rect.top,\r\n                    behavior: \"smooth\"\r\n                });\r\n            } else {\r\n                window.scrollTo({\r\n                    left: 0,\r\n                    top: 0,\r\n                    behavior: \"smooth\"\r\n                });\r\n            }\r\n        })\r\n    });\r\n\r\n    // window.addEventListener('scroll', () => {\r\n    //     if (document.documentElement.scrollTop > 1000) {\r\n    //         up.style.cssText = `opacity: 1;\r\n    //                             cursor: pointer;`\r\n    //     } else {\r\n    //         up.style.cssText = `opacity: 0;\r\n    //                             cursor: none;`\r\n    //     }\r\n    // })\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (scrollSmooth);\n\n//# sourceURL=webpack://gulp-start/./src/js/modules/scrollSmooth.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/slider.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/slider.js ***!
+  \**********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\nconst slider = () => {\r\n    const carousel = document.querySelector('.slider__field'),\r\n          btnPrev = document.querySelector('.slider__btn_prev'),\r\n          btnNext = document.querySelector('.slider__btn_next'),\r\n          btnMore = document.querySelector('.slider__btn_more'),\r\n          width = carousel.querySelector('.slider__item').offsetWidth,\r\n          slides = [...carousel.children];\r\n\r\n    let isDragging = false, startX, startScrollLeft;\r\n    let offset = 0,\r\n        count = 2;\r\n\r\n    showBtn();\r\n    btnPrev.addEventListener('click', () => {\r\n        carousel.scrollLeft -= width;\r\n        offset -= width;\r\n        showBtn();\r\n    });\r\n    \r\n    btnNext.addEventListener('click', () => {\r\n        carousel.scrollLeft += width;\r\n        offset += width;\r\n        if (window.innerWidth > 1200) {\r\n            showBtn(3);\r\n        } else if (window.innerWidth <= 1200 && window.innerWidth > 768) {\r\n            showBtn(2);\r\n        }\r\n        else if (window.innerWidth <= 768 && window.innerWidth > 576) {\r\n            showBtn(1);\r\n        }\r\n    });\r\n\r\n    if (window.screen.availWidth <= 768) {\r\n        slides.forEach(slide => {\r\n            slide.addEventListener('click', () => {\r\n                slide.classList.toggle('item_active');\r\n            })\r\n        })\r\n    }\r\n    if (window.screen.availWidth <= 576) {\r\n        hiddeSlide();\r\n        showSlide();\r\n        btnMore.addEventListener('click', () => {\r\n            hiddeSlide();\r\n            count += 2;\r\n            showSlide();\r\n            if (count == slides.length) {\r\n                btnMore.style.display = 'none';\r\n            }\r\n        })\r\n    }\r\n\r\n    function hiddeSlide() {\r\n        slides.forEach(slide => {\r\n            slide.style.display = 'none';\r\n        });\r\n    }\r\n    function showSlide() {\r\n        slides.forEach((slide, i) => {\r\n            if (i < count) {\r\n                slide.style.display = '';\r\n            }\r\n        });\r\n    }\r\n    function showBtn(num = 0) {\r\n        if (offset === 0) {\r\n            btnPrev.style.display = 'none'\r\n        } else {\r\n            btnPrev.style.display = '';\r\n\r\n        }\r\n\r\n        if (offset == width * (carousel.children.length - num)) {\r\n            btnNext.style.display = 'none';\r\n        } else {\r\n            btnNext.style.display = '';\r\n        }\r\n    }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (slider);\n\n//# sourceURL=webpack://gulp-start/./src/js/modules/slider.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/yearDate.js":
+/*!************************************!*\
+  !*** ./src/js/modules/yearDate.js ***!
+  \************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\nconst yearDate = () => {\r\n    const dateField = document.querySelector('.footer__protection span');\r\n\r\n    let date = new Date();\r\n\r\n    dateField.textContent = `${date.getFullYear()}`;\r\n    console.log(date.getFullYear());\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (yearDate);\n\n//# sourceURL=webpack://gulp-start/./src/js/modules/yearDate.js?");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	!function() {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = function(exports) {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/main.js");
+/******/ 	
+/******/ })()
+;

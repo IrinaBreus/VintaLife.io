@@ -4,6 +4,7 @@ import form from './modules/form';
 import modals from './modules/modals';
 import scrollSmooth from './modules/scrollSmooth';
 import slider from './modules/slider';
+import yearDate from './modules/yearDate';
 
 document.addEventListener('DOMContentLoaded', () => {
 'use stricti';
@@ -14,4 +15,6 @@ scrollSmooth();
 changeTheme();
 modals();
 form();
+
+yearDate();
 });

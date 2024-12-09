@@ -31,6 +31,8 @@ const form = () => {
                         form.reset();
                         setTimeout(() => {
                             modalOk.style.display = 'none';
+                            document.body.style.overflow = '';
+                            document.body.style.marginRight = `0px`;
                         }, 3000);
                     }
                 })

@@ -21,6 +21,7 @@
     }
     &__item {
         scroll-snap-align: start;
+        user-select: none;
     }
     &__btn {
         width: 60px;

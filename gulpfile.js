@@ -102,7 +102,7 @@ const font = () => {
     .pipe(browserSync.stream());
 }
 
-const copy = () => {
+const copyPhp = () => {
     return src("./src/*.php")
         .pipe(dest(dist))
         .pipe(browserSync.stream());
@@ -130,13 +130,13 @@ const watcher = () => {
     watch("./src/js/**/*.js", js);
     watch("./src/img/**/*");
     watch(".src/fonts/**/*");
-    watch("./src/*.php", copy);
+    watch("./src/*.php", copyPhp);
 }
 
 
 const build = series (
     clear,
-    parallel(html, scss, js, img, font, icons, copy)
+    parallel(html, scss, js, img, font, icons, copyPhp)
 );
 
 const dev = series (
@@ -151,7 +151,7 @@ exports.js = js;
 exports.img = img;
 exports.font = font;
 exports.icons = icons;
-exports.copy = copy;
+exports.copy = copyPhp;
 
 // Сборка
 
